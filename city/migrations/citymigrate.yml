@@ -1,0 +1,45 @@
+id: citymigrate
+label: Import From JSON Data
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - modules/custom/city/files/cities.json
+  item_selector: migration
+  fields:
+    -
+      name: id
+      label: "Identifier"
+      selector: id
+    -
+      name: city
+      label: "City Name"
+      selector: city
+    -
+      name: loc
+      label: "Loc Name"
+      selector: loc
+    -
+      name: pop
+      label: "Population"
+      selector: pop
+    -
+      name: state
+      label: "State"
+      selector: state
+  ids:
+    id:
+      type: integer
+process:
+  id: id
+  city: city
+  loc: loc
+  pop: pop
+  state: state
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:node
+  default_bundle: city_term

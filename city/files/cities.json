@@ -1,0 +1,39 @@
+{
+  "migration": [
+    {
+      "id": 1,
+      "city": "AGAWAM1",
+      "loc": "AGAWAM2",
+      "pop": 15338,
+      "state": "MA"
+    },
+    {
+      "id": 2,
+      "city": "AGAWAM2",
+      "loc": "AGAWAM2",
+      "pop": 15338,
+      "state": "MA"
+    },
+    {
+      "id": 3,
+      "city": "AGAWAM3",
+      "loc": "AGAWAM2",
+      "pop": 15338,
+      "state": "MA"
+    },
+    {
+      "id": 4,
+      "city": "AGAWAM4",
+      "loc": "AGAWAM2",
+      "pop": 15338,
+      "state": "MA"
+    },
+    {
+      "id": 5,
+      "city": "AGAWAM5",
+      "loc": "AGAWAM2",
+      "pop": 15338,
+      "state": "MA"
+    }
+  ]
+}

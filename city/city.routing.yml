@@ -1,0 +1,57 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in sevaral place (links, redirects, local actions etc.)
+entity.city_term.canonical:
+  path: '/city_term/{city_term}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the city_term entity
+    _entity_view: 'city_term'
+    _title: 'city_term Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'city_term.view'
+
+entity.city_term.collection:
+  path: '/city_term/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the city_term entity.
+    _entity_list: 'city_term'
+    _title: 'city_term List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view city_term entity'
+
+entity.city.term_add:
+  path: '/city_term/add'
+  defaults:
+  # Calls the form.add controller, defined in the city_term entity.
+    _entity_form: city_term.add
+    _title: 'Add city_term'
+  requirements:
+    _entity_create_access: 'city_term'
+
+entity.city_term.edit_form:
+  path: '/city_term/{city_term}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the city_term entity.
+    _entity_form: city_term.edit
+    _title: 'Edit city_term'
+  requirements:
+    _entity_access: 'city_term.edit'
+
+entity.city_term.delete_form:
+  path: '/city_term/{city_term}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the city_term entity.
+    _entity_form: city_term.delete
+    _title: 'Delete city_term'
+  requirements:
+    _entity_access: 'city_term.delete'
+
+entity.city.term_settings:
+  path: 'admin/structure/city_term_settings'
+  defaults:
+    _form: '\Drupal\city\Form\TermSettingsForm'
+    _title: 'city_term Settings'
+  requirements:
+    _permission: 'administer city_term entity'
