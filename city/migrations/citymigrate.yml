@@ -1,0 +1,45 @@
+id: citymigrate
+label: Import From JSON Data
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  headers:
+    Accept: 'application/json; charset=utf-8'
+    Content-Type: 'application/json'
+  urls:
+    - modules/custom/city/files/cities.json
+  item_selector: data
+  fields:
+    -
+      name: id
+      label: "identifier"
+      selector: id
+    -
+      name: city
+      label: "desc of term"
+      selector: city
+    -
+      name: loc
+      label: "parent of term"
+      selector: loc
+    -
+      name: pop
+      label: "desc of term"
+      selector: pop
+    -
+      name: state
+      label: "parent of term"
+      selector: state
+  ids:
+    id:
+      type: integer
+process:
+  city: city
+  loc: loc
+  pop: pop
+  state: state
+  created: timestamp
+  changed: timestamp
+destination:
+  plugin: entity:city_term

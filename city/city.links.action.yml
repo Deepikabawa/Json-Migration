@@ -1,0 +1,11 @@
+# All action links for this module
+
+city._term_add:
+  # Which route will be called by the link
+  route_name: entity.city.term_add
+  title: 'Add term'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.city_term.collection
+    - entity.city_term.canonical
